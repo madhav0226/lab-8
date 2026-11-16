@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Information Form - Lab 8</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Card Header -->
+    <header class="card-header">
+      <h1>User Information Form</h1>
+      <p>Please enter your details below to register</p>
+    </header>
+
+    <!-- Card Body: Form Elements -->
+    <main class="card-body">
+      <form id="userForm" novalidate>
+        <div class="form-grid">
+
+          <!-- Full Name -->
+          <div class="form-group full-width">
+            <label for="fullName">Full Name <span class="required-star">*</span></label>
+            <input 
+              type="text" 
+              id="fullName" 
+              name="fullName" 
+              class="form-control" 
+              placeholder="e.g. Alex Johnson" 
+              autocomplete="name"
+              required
+            >
+            <span class="error-msg" id="nameError">Please enter a valid name (at least 3 characters).</span>
+          </div>
+
+          <!-- Gender (Radio Buttons) -->
+          <div class="form-group full-width">
+            <label>Gender <span class="required-star">*</span></label>
+            <div class="radio-group" id="genderGroup">
+              <label class="radio-label">
+                <input type="radio" name="gender" value="Male"> Male
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="gender" value="Female"> Female
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="gender" value="Other"> Other
+              </label>
+            </div>
+            <span class="error-msg" id="genderError">Please select your gender.</span>
+          </div>
+
+          <!-- Mobile Number -->
+          <div class="form-group">
+            <label for="mobile">Mobile Number <span class="required-star">*</span></label>
+            <input 
+              type="tel" 
+              id="mobile" 
+              name="mobile" 
+              class="form-control" 
+              placeholder="10-digit mobile number" 
+              maxlength="10" 
+              autocomplete="tel"
+              required
+            >
+            <span class="error-msg" id="mobileError">Please enter a valid 10-digit mobile number.</span>
+          </div>
+
+          <!-- Mail ID -->
+          <div class="form-group">
+            <label for="email">Mail ID (Email) <span class="required-star">*</span></label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              class="form-control" 
+              placeholder="alex@example.com" 
+              autocomplete="email"
+              required
+            >
+            <span class="error-msg" id="emailError">Please enter a valid email address.</span>
+          </div>
+
+          <!-- City -->
+          <div class="form-group">
+            <label for="city">City <span class="required-star">*</span></label>
+            <input 
+              type="text" 
+              id="city" 
+              name="city" 
+              class="form-control" 
+              placeholder="e.g. San Francisco" 
+              autocomplete="address-level2"
+              required
+            >
+            <span class="error-msg" id="cityError">Please enter your city.</span>
+          </div>
+
+          <!-- State -->
+          <div class="form-group">
+            <label for="state">State / Province <span class="required-star">*</span></label>
+            <input 
+              type="text" 
+              id="state" 
+              name="state" 
+              class="form-control" 
+              placeholder="e.g. California" 
+              autocomplete="address-level1"
+              required
+            >
+            <span class="error-msg" id="stateError">Please enter your state.</span>
+          </div>
+
+          <!-- Country -->
+          <div class="form-group full-width">
+            <label for="country">Country <span class="required-star">*</span></label>
+            <select id="country" name="country" class="form-control" required>
+              <option value="" disabled selected>-- Select your country --</option>
+              <option value="India">India</option>
+              <option value="United States">United States</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="Canada">Canada</option>
+              <option value="Australia">Australia</option>
+              <option value="Germany">Germany</option>
+              <option value="France">France</option>
+              <option value="Singapore">Singapore</option>
+              <option value="Japan">Japan</option>
+              <option value="Other">Other</option>
+            </select>
+            <span class="error-msg" id="countryError">Please select your country.</span>
+          </div>
+
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="btn-group">
+          <button type="submit" class="btn btn-primary" id="submitBtn">
+            <span>Submit Details</span> &rarr;
+          </button>
+          <button type="reset" class="btn btn-secondary" id="resetBtn">
+            <span>Clear</span> &#10006;
+          </button>
+        </div>
+      </form>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

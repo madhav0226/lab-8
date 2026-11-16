@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Information Summary - Lab 8</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Card Header -->
+    <header class="card-header">
+      <h1>User Information Summary</h1>
+      <p>Details captured from the submission form</p>
+    </header>
+
+    <!-- Card Body: Display Area -->
+    <main class="card-body">
+      <!-- Container for populated user data -->
+      <div id="userDataContainer">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <h2 style="font-size: 1.2rem; color: #374151;">Profile Details</h2>
+          <span class="badge" id="displayBadge">Verified Record</span>
+        </div>
+
+        <table class="info-table">
+          <tbody>
+            <tr>
+              <th>Full Name</th>
+              <td id="dispName">-</td>
+            </tr>
+            <tr>
+              <th>Gender</th>
+              <td id="dispGender">-</td>
+            </tr>
+            <tr>
+              <th>Mobile Number</th>
+              <td id="dispMobile">-</td>
+            </tr>
+            <tr>
+              <th>Mail ID (Email)</th>
+              <td id="dispEmail">-</td>
+            </tr>
+            <tr>
+              <th>City</th>
+              <td id="dispCity">-</td>
+            </tr>
+            <tr>
+              <th>State</th>
+              <td id="dispState">-</td>
+            </tr>
+            <tr>
+              <th>Country</th>
+              <td id="dispCountry">-</td>
+            </tr>
+            <tr>
+              <th>Submitted At</th>
+              <td id="dispTime" style="color: var(--text-muted); font-size: 0.88rem;">-</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Action Buttons -->
+        <div class="btn-group">
+          <a href="index.html" class="btn btn-secondary">
+            &larr; <span>Back to Form</span>
+          </a>
+          <button type="button" class="btn btn-primary" onclick="window.print()">
+            &#128424; <span>Print Summary</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Fallback when no data exists -->
+      <div id="emptyContainer" class="empty-state" style="display: none;">
+        <div class="empty-icon">&#128196;</div>
+        <h3>No User Information Found</h3>
+        <p>It seems no data has been submitted yet. Please fill out the registration form first.</p>
+        <a href="index.html" class="btn btn-primary" style="display: inline-flex; width: auto;">
+          &larr; <span>Go to Form</span>
+        </a>
+      </div>
+    </main>
+  </div>
+
+  <script src="display.js"></script>
+</body>
+</html>
